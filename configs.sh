@@ -18,7 +18,9 @@ tmpfs                                     /tmp            tmpfs   rw,nosuid,node
 ------------------------------------------------------------------
 
 mount | grep btrfs
+/dev/sda3 on / type btrfs (rw,noatime,compress=zstd,ssd,space_cache,subvolid=256,subvol=/@)
 mount | grep tmpfs
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,relatime)
 
 #=======================
 # Netwerkkarten Treiber
