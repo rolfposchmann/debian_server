@@ -28,3 +28,21 @@ btrfs subvolume list /
 
 #mounten
 mount -t btrfs -o subvolid=256,compress /dev/sda5 /mnt 
+
+#mount ROOT of all subvol:
+mount -o subvol=/ /dev/sda1 /mnt
+
+#creat subvol
+btrfs subvol create mynewrootsubvol
+btrfs subvol create /mnt/mynewrootsubvol
+
+#default subvol:
+btrfs subvol list /
+btrfs subvol list .
+
+btrfs subvol set-default 257 .
+
+btrfs subvol get-default /
+
+btrfs subvolume set-default /mnt
+
