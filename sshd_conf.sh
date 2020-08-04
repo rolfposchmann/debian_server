@@ -1,5 +1,6 @@
 https://medium.com/@jasonrigden/hardening-ssh-1bcb99cd4cef
 https://blog.buettner.xyz/sichere-ssh-konfiguration/
+https://unix.stackexchange.com/questions/406245/limit-ssh-access-to-specific-clients-by-ip-address
 
 Port 2222
 
@@ -13,11 +14,15 @@ PermitRootLogin yes
 
 #Only this user can login via SSH
 AllowUsers rolf
+#oder
+AllowUsers johndoe@192.168.1.* admin2@192.168.1.*
 
 #X11 für grafische Oberfläche
 X11Forwarding no
 
 PasswordAuthentication no
+#normal yes, aber wegen match:
+PubkeyAuthentication no
 
 #höher als PAM
 ChallengeResponseAuthentication no
@@ -25,6 +30,9 @@ ChallengeResponseAuthentication no
 #PAM does not just do authentication, but authorisation and session services. You probably want to keep it on as it adds quite a bit of flexibility.
 # https://serverfault.com/questions/669458/whats-the-downside-of-disabling-pam-in-openssh-if-only-public-key-login-is-allo
 UsePAM yes
+
+Match Address 127.0.0.*
+    PubkeyAuthentication yes
 
 
 Test:
