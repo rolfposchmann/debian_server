@@ -1,4 +1,5 @@
-
+#mount überprüfen
+btrfs subvolume list .
 
 
 nano /etc/fstab
