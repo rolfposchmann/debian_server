@@ -25,6 +25,10 @@ btrfs qgroup show /
 btrfs subvolume list /
 
 
+#show all subvols systemwide:
+btrfs filesystem show
+
+
 
 #mounten
 mount -t btrfs -o subvolid=256,compress /dev/sda5 /mnt 
