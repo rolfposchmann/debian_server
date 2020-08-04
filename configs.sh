@@ -53,10 +53,25 @@ systemctl restart networking
 ip -4 addr
 ping google.com
 
+
+
+
+#sources.list
+
 nano /etc/apt/sources.list
 --------------------------------------------------------------
  deb http://deb.debian.org/debian/ buster main
  --------------------------------------------------------------
+ 
+ https://debgen.github.io/
+ https://wiki.debianforum.de/Sources.list
+ ----------------------------------------------
+deb [arch=amd64] http://ftp.de.debian.org/debian/ stable main contrib non-free
+
+deb [arch=amd64] http://ftp.de.debian.org/debian/ stable-updates main contrib non-free
+
+deb [arch=amd64] http://security.debian.org/ stable/updates main contrib non-free
+ ----------------------------------------------
 
 apt install net-tools
 
