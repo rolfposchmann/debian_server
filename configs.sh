@@ -103,3 +103,13 @@ systemctl start fstrim.timer
 cat /proc/sys/vm/swappiness
 # 60
 sysctl vm.swappiness=10
+
+
+#ntp
+apt-get install ntp
+systemctl status ntp
+
+#timezone
+dpkg-reconfigure tzdata
+
+date
